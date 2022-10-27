@@ -24,9 +24,19 @@
 2. Write a sentence in plain English describing how `square(square(15))` is
    evaluated.
 
+the function square(square(15)) started by calculating square of 15 = 15*15 = 225
+then, she calculated the square of 225 = 225*225 = 50625
+
+
 3. Rename `square`'s `num` parameter in your above code to `monkey`, and
    rename the uses of that parameter in the body to `monkey` as well. Will the
    function `square` still work? Why or why not?
+
+Changing the name of the parameter does not affect its value.
+So the result remains the same.
+And the Square function works fine.
+
+
 
 4. What is wrong with the following definitions of `square`? Write a sentence or
    two describing the issue(s); then, try copying the erroneous examples into a
@@ -39,42 +49,52 @@
      return x * x;
    }
 
+   'the name of the function parameter is different from the one used in it'
+
    function square(5) {
      return 5 * 5;
    }
 
+   'no error here'
+
    function square("x") {
      return "x" * "x";
    }
+
+   'The declared parameter is a character string. We cannot multiply 2 strings.'
+    'The parameter must be a number for the Square function to return a result.'
    ```
 
 5. Fix the invalid syntax in the following functions (you can copy and paste these
    invalid definitions into your console and then edit them there):
 
    ```js
-   func square1(x {
+   function square1(x) {
      return x * x;
    }
 
-   functionsquare2 x)
+   function square2(x){
      return x * x;
    }
 
-   function (x) square3 {
+   function square3(x)  {
      return x * x;
+   }
    ```
 
 6. The following functions exhibit poor style -- fix these issues using the
    original version of `square` as a reference.
 
    ```js
-   function square(x){return x*x;}
+   function square(x){
+    return x * x;
+    }
 
-   function square (x) { return x *x;
+   function square(x){ 
+    return x * x;
    }
 
-   function square(x)
-   {
+   function square(x){
    return x * x;
    }
    ```
@@ -83,7 +103,7 @@
 
   ```js
   function cube(x) {
-    // your code here
+    return x*x*x
   }
   ```
 
@@ -93,8 +113,8 @@
 
   ```js
   // don't forget the parameters!
-  function fullName() {
-    // your code here
+  function fullName(firstName,lastName) {
+    console.log(firstName +' '+ lastName)
   }
   fullName("John", "Doe") // => "John Doe"
   ```
@@ -102,8 +122,22 @@
 9. Write a function `average` that takes two numbers as input (parameters), and
    returns the average of those numbers.
 
+   
+  ```js
+  function average(x,y){
+    return (x+y)/2
+  }
+  ```
+
 10. Write a function `greeter` that takes a name as an argument and *greets*
     that name by returning something along the lines of `"Hello, <name>!"`
+
+```js
+  function greeter(name){
+    console.log(`Hello, ${name}`)
+  }
+  ```
+
 
 11. Using the document found at <a href="http://www.gbcnv.edu/documents/ASC/docs/00000005.pdf" target="_blank">this link</a>, translate the first page of geometric
     formulas into JavaScript functions.
@@ -141,6 +175,55 @@
 
 Translate the rest of the geometric formulas found <a href="http://www.gbcnv.edu/documents/ASC/docs/00000005.pdf" target="_blank">here</a> into JavaScript functions.
 
+ ```js
+    function areaSquare (s){
+      return s*s
+    }
+
+    function arearRec (l,w){
+      return l*w
+    }
+    function areaParal(l,h){
+      return l*h
+    }
+
+    function areaTrap(h,b1,b2){
+      return h/2*(b1+b2)
+    }
+
+    function areaTriangle(h,b){
+      return (b/2)*h
+    }
+
+    function areaCercle(r){
+      return Math.PI * r * r
+    }
+    
+    function sketchRec(l,w,h){
+      return l*w*h
+    }
+    
+    function sketchCube(s) {
+    return s*s*s
+  }
+    
+    function sketchCylinder(r,h) {
+    return Math.PI * h * r * r
+  }
+
+  function sketchSphere(r) {
+    return (Math.PI * 4/3) *r*r*r
+  }
+
+  function sketchPyramid(l,w,h) {
+    return (l*h*w)/3
+  }
+
+  function sketchFrustum(r,R,h) {
+    return (Math.PI * (r*r + r*R + R*R) *h)/3
+  }
+    ```
+
 ### Advanced (extra practice)
 
 1. Compound interest can be calculated with the formula:
@@ -155,6 +238,7 @@ Translate the rest of the geometric formulas found <a href="http://www.gbcnv.edu
 
   Write a function `futureValue` that can be used to calculate the *future value*
   of a quantity of money using compound interest.
+  
 
   Use the function to calculate what the future value of $1700 (*P* = 1700)
   deposited in a bank that pays an annual interest rate of 4.7% (*i* = 0.047),

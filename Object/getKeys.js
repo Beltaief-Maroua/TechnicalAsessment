@@ -2,6 +2,8 @@
 // of the key names.
 
 var animal;
-var getKeys;
+var getKeys = function(animal){
+ return animal.keys
+}
 
 

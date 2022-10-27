@@ -1,19 +1,56 @@
 // 1. Compute the sum of an array of integers.
 // sum([1,2,3,4,5,6]); // 21
 var sum = function(array) {
+    var somme = 0
+    if (array.length === 0){
+        return 0
+    } else if (array.length === 1){
+    return array [0]
+
+  }else {
+    return somme = array[0] + sum (array.slice(1))
+  }
+
 };
 
 // 2. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
+    var somme = 0
+    if (array.length === 1){
+      return array [0]
+  
+    } else {
+        var som = 0
+        for (i=0 ; i<array.length ; i++){
+            if (Array.isArray(array[i]) === true){
+              som = som + array[i]
+            } else {
+                somme = array[0] + arraySum (array.slice(1))
+            }
+
+        } return somme
+    }
+
 };
 
 // 3. Check if a number is even.
 var isEven = function(n) {
+    if (n === 0){
+        return true
+    } else if (n === 1){
+        return false
+    } else if (n>0){
+       return isEven(n-2)
+    } else if (n<0){
+        return isEven(n+2)
+    }
+
 };
 
 // 4. Write a function that reverses a string.
 var reverse = function(string) {
+
 };
 
 
@@ -49,7 +86,20 @@ var nthFibo = function(n) {
 //   e: {e: {e: 2}, ee: 'car'}
 // };
 // nestedEvenSum(obj1); // 10
-var nestedEvenSum = function(obj) {
+var nestedEvenSum = function(object) {
+    var sum = 0
+    for (var key in object){
+        if (typeof object.value != object ){
+            if (object.value%2 === 0){
+              sum = sum + obj.value
+            }
+        } else if (typeof object.value == object){
+               obj1 = object.value
+               if (obj1.value%2 === 0){
+                sum = sum + obj1.value
+              }
+        }
+    } return sum
 };
 
 

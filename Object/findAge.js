@@ -2,6 +2,8 @@
 // animal object and returns the age.
 
 var animal;
-var findAge;
+var findAge = function (animal,age){
+  return animal.age
+}
 
 
